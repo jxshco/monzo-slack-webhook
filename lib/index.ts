@@ -45,6 +45,11 @@ const handleMonzoWebhook: Handler = async (
                             ]
                         }
                     ]
+                },
+                {
+                    headers: {
+                        'Content-type': 'application/json'
+                    }
                 })
             }
         }
