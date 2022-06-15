@@ -1,6 +1,6 @@
 {
   "name": "monzo-slack-webhook",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "> TODO: description",
   "author": "Josh Sturrock <jxshco@gmail.com>",
   "homepage": "https://github.com/jxshco/monzo-slack-webhook",
