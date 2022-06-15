@@ -1,0 +1,9 @@
+node_modules
+.serverless
+.env
+.env.*
+!.env.example
+.build
+.webpackCache
+.webpack
+tmp/

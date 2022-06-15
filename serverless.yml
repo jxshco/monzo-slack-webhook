@@ -1,0 +1,53 @@
+service: ${env:SERVICE_NAME}
+useDotenv: true
+
+package:
+  individually: true
+
+plugins:
+  - serverless-offline
+  - serverless-webpack
+  # - serverless-plugin-datadog
+
+custom:
+  # datadog:
+  #   addExtension: true
+  #   apiKey: ${env:DATADOG_API_KEY}
+  #   site: ${env:DATADOG_SITE}
+  webpack:
+    webpackConfig: 'webpack.config.js'
+    packager: 'yarn'
+    includeModules:
+      forceExclude:
+        - dd-trace
+        - datadog-lambda-js
+        - aws-sdk
+
+provider:
+  name: aws
+  region: ${opt:region, 'us-east-1'}
+  runtime: nodejs14.x
+  stage: ${opt:stage, 'dev'}
+  apiGateway:
+    binaryMediaTypes:
+      - 'multipart/form-data'
+  environment:
+    SLACK_WEBHOOK_URL: ${env:SLACK_WEBHOOK_URL}
+    SERVICE_NAME: ${env:SERVICE_NAME}
+  lambdaHashingVersion: "20201221"
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action: 
+            - logs:*
+          Resource:
+            - "*"
+
+functions:
+  handleMonzoWebhook:
+    handler: handler.handleMonzoWebhook
+    events:
+      - http:
+          path: /handle-monzo-webhook
+          method: POST

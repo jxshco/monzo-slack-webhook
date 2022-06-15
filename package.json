@@ -1,0 +1,48 @@
+{
+  "name": "monzo-slack-webhook",
+  "version": "1.0.0",
+  "description": "> TODO: description",
+  "author": "Josh Sturrock <jxshco@gmail.com>",
+  "homepage": "https://github.com/jxshco/monzo-slack-webhook",
+  "license": "MIT",
+  "main": "handler.ts",
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "lib"
+  ],
+  "dependencies": {
+    "@babel/preset-typescript": "7.16.7",
+    "axios": "0.27.2",
+    "dotenv": "15.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "7.17.5",
+    "@types/aws-lambda": "8.10.92",
+    "aws-sdk": "2.1066.0",
+    "babel-loader": "8.2.3",
+    "cache-loader": "4.1.0",
+    "fork-ts-checker-webpack-plugin": "5.0.12",
+    "serverless-dotenv-plugin": "3.12.2",
+    "serverless-offline": "8.4.0",
+    "serverless-plugin-datadog": "4.2.0",
+    "serverless-plugin-typescript": "2.1.1",
+    "serverless-webpack": "5.6.1",
+    "ts-loader": "9.2.7",
+    "typescript": "4.5.5",
+    "webpack": "5.69.1",
+    "webpack-node-externals": "2.5.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jxshco/monzo-slack-webhook.git"
+  },
+  "scripts": {
+    "deploy": "sls deploy --stage prod",
+    "start": "serverless offline start --noPrependStageInUrl"
+  },
+  "bugs": {
+    "url": "https://github.com/jxshco/monzo-slack-webhook/issues"
+  }
+}
