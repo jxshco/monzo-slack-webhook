@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.2] - 18/06/2022
+### Added 
+- Added fallbacks to data
+
 ## [1.0.1] - 15/06/2022
 ### Added 
 - Added application/json header to slack request

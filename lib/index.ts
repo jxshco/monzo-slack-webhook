@@ -28,19 +28,19 @@ const handleMonzoWebhook: Handler = async (
                             "fields": [
                                 {
                                     "type": "mrkdwn",
-                                    "text": `*ID:*\n${jsonData.data.id}`
+                                    "text": `*ID:*\n${jsonData?.data?.id || 'N/A'}`
                                 },
                                 {
                                     "type": "mrkdwn",
-                                    "text": `*Description:*\n${jsonData.data.description}`
+                                    "text": `*Description:*\n${jsonData?.data?.description || 'N/A'}`
                                 },
                                 {
                                     "type": "mrkdwn",
-                                    "text": `*Category:*\n${jsonData.data.category}`
+                                    "text": `*Category:*\n${jsonData?.data?.category || 'N/A'}`
                                 },
                                 {
                                     "type": "mrkdwn",
-                                    "text": `*Merchant Address:*\n${jsonData.data.merchant.address.address}, ${jsonData.data.merchant.address.city}, ${jsonData.data.merchant.address.postcode}`
+                                    "text": `*Merchant Address:*\n${jsonData?.data?.merchant?.address?.address || 'N/A'}, ${jsonData?.data?.merchant?.address?.city || 'N/A'}, ${jsonData?.data?.merchant?.address?.postcode || 'N/A'}`
                                 }
                             ]
                         }
